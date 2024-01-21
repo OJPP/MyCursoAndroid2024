@@ -7,9 +7,8 @@
     android:layout_margin="16dp"
     tools:context=".view.MainActivity">
 
-    <TextView
+    <TextView android:id="@+id/txtTitulo"
         android:background="@color/red"
-        android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_titulo"
@@ -19,8 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTelefoneContato"
+    <EditText android:id="@+id/editTelefoneContato"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -31,8 +29,7 @@
         tools:layout_editor_absoluteX="0dp"
         android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/editNomeCurso"
+    <EditText android:id="@+id/editNomeCurso"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -43,8 +40,7 @@
         tools:layout_editor_absoluteX="-16dp"
         android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/editSobrenome"
+    <EditText android:id="@+id/editSobrenome"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -55,8 +51,7 @@
         tools:layout_editor_absoluteX="-16dp"
         android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/editPrimeiroNome"
+    <EditText android:id="@+id/editPrimeiroNome"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -67,8 +62,7 @@
         tools:layout_editor_absoluteX="0dp"
         android:autofillHints="" />
 
-    <Button
-        android:id="@+id/btnLimpar"
+    <Button android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -79,8 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato" />
 
-    <Button
-        android:id="@+id/btnSalvar"
+    <Button android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
@@ -91,8 +84,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnLimpar"
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato" />
 
-    <Button
-        android:id="@+id/btnFinaliar"
+    <Button android:id="@+id/btnFinaliar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
