@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String NOME_PREFERENCES = "pref_listavip";
 
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor listaVip;
     PessoaController pessoaController;
     EditText editPrimeiroNome;
     EditText editSobrenome;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sharedPreferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaVip = sharedPreferences.edit();
+        listaVip = sharedPreferences.edit();
 
         pessoaController = new PessoaController();
         pessoaController.toString();
@@ -46,13 +47,6 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setSobrenome(sharedPreferences.getString("sobrenome", ""));
         pessoa.setCursoDesejado(sharedPreferences.getString("cursoDesejado", ""));
         pessoa.setTelefoneContacto(sharedPreferences.getString("telefoneContacto", ""));
-/*
-        outraPessoa = new Pessoa();
-        outraPessoa.setPrimeiroNome("Luis");
-        outraPessoa.setSobrenome("Alves");
-        outraPessoa.setCursoDesejado("Android");
-        outraPessoa.setTelefoneContacto("961183377");
-*/
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenome = findViewById(R.id.editSobrenome);
@@ -68,13 +62,6 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinaliar = findViewById(R.id.btnFinaliar);
 
-/*
-        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
-        editSobrenome.setText(pessoa.getSobrenome());
-        editNomeCurso.setText(pessoa.getCursoDesejado());
-        editTelefoneContato.setText(pessoa.getTelefoneContacto());
-*/
-
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 editSobrenome.setText("");
                 editNomeCurso.setText("");
                 editTelefoneContato.setText("");
+
+                listaVip.clear();
+                listaVip.apply();
             }
         });
 
