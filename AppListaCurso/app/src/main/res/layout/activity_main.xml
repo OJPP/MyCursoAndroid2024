@@ -18,26 +18,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText android:id="@+id/editTelefoneContato"
+    <EditText android:id="@+id/editPrimeiroNome"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:ems="10"
-        android:hint="@string/txt_hint_edit_telefone_contacto"
+        android:hint="@string/txt_hint_edit_primeiro_nome"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/editNomeCurso"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
         tools:layout_editor_absoluteX="0dp"
-        android:autofillHints="" />
-
-    <EditText android:id="@+id/editNomeCurso"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_edit_nome_do_curso"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/editSobrenome"
-        tools:layout_editor_absoluteX="-16dp"
         android:autofillHints="" />
 
     <EditText android:id="@+id/editSobrenome"
@@ -51,33 +40,50 @@
         tools:layout_editor_absoluteX="-16dp"
         android:autofillHints="" />
 
-    <EditText android:id="@+id/editPrimeiroNome"
+    <EditText android:id="@+id/editNomeCurso"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:ems="10"
-        android:hint="@string/txt_hint_edit_primeiro_nome"
+        android:hint="@string/txt_hint_edit_nome_do_curso"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/editSobrenome"
+        tools:layout_editor_absoluteX="-16dp"
+        android:autofillHints="" />
+
+    <EditText android:id="@+id/editTelefoneContato"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_telefone_contacto"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editNomeCurso"
         tools:layout_editor_absoluteX="0dp"
         android:autofillHints="" />
 
-    <Button
-        android:id="@+id/btnFinaliar"
-        android:layout_width="match_parent"
+    <TextView android:id="@+id/txtListaSpinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@color/corBotoes"
-        android:text="@string/txt_button_finalizar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Selecione um Curso"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
-        app:layout_constraintVertical_bias="0.956" />
+        app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato" />
 
-    <Button
-        android:id="@+id/btnLimpar"
+    <Spinner android:id="@+id/spinner"
+        android:layout_width="377dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato" />
+
+    <Button android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -89,8 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
         app:layout_constraintVertical_bias="0.943" />
 
-    <Button
-        android:id="@+id/btnSalvar"
+    <Button android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
@@ -102,27 +107,17 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
         app:layout_constraintVertical_bias="0.939" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="377dp"
+    <Button android:id="@+id/btnFinaliar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
+        android:layout_margin="16dp"
+        android:background="@color/corBotoes"
+        android:text="@string/txt_button_finalizar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato" />
-
-    <TextView
-        android:id="@+id/txtListaSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selecione um Curso"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato" />
+        app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
+        app:layout_constraintVertical_bias="0.956" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
