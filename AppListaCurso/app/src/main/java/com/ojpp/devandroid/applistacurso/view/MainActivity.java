@@ -11,12 +11,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ojpp.devandroid.applistacurso.R;
+import com.ojpp.devandroid.applistacurso.controller.CursoController;
 import com.ojpp.devandroid.applistacurso.controller.PessoaController;
+import com.ojpp.devandroid.applistacurso.model.Curso;
 import com.ojpp.devandroid.applistacurso.model.Pessoa;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     PessoaController pessoaController;
+    CursoController cursoController;
     EditText editPrimeiroNome;
     EditText editSobrenome;
     EditText editNomeCurso;
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnSalvar;
     Button btnFinaliar;
     Pessoa pessoa;
+    List<Curso> listaDeCursos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         pessoaController = new PessoaController(MainActivity.this);
         pessoaController.toString();
+
+        cursoController = new CursoController();
+        listaDeCursos = cursoController.getListaDeCursos();
 
         Pessoa pessoa = pessoaController.buscar();
 
