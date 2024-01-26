@@ -10,6 +10,9 @@ public class CursoController {
     private List<Curso> listaDeCursos;
 
     public List<Curso> getListaDeCursos() {
+
+        listaDeCursos = new ArrayList<>();
+
         listaDeCursos.add(new Curso("Java")); // Java
         listaDeCursos.add(new Curso("HTML")); // HTML
         listaDeCursos.add(new Curso("C#")); // C#
@@ -23,7 +26,7 @@ public class CursoController {
     }
 
     public ArrayList<String> dadosParaSpinner() {
-        ArrayList<String> dados = new ArrayList<>();
+        List<String> dados = new ArrayList<>();
 
         for (int i = 0; i < getListaDeCursos().size(); i++) {
             Curso curso = getListaDeCursos().get(i);
