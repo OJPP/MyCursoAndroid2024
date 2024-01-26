@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.ojpp.devandroid.applistacurso.R;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinaliar;
+    Spinner spinner;
     Pessoa pessoa;
     List<String> nomeDosCursos;
 
@@ -38,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         pessoaController = new PessoaController(MainActivity.this);
         pessoaController.toString();
-
-        cursoController = new CursoController();
-        nomeDosCursos = cursoController.dadosParaSpinner();
 
         Pessoa pessoa = pessoaController.buscar();
 
@@ -57,6 +57,20 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinaliar = findViewById(R.id.btnFinaliar);
+
+        // Adapter
+        // Layout
+        // Injetar o Adapter ao Spinner
+        cursoController = new CursoController();
+        nomeDosCursos = cursoController.dadosParaSpinner();
+
+        spinner = findViewById(R.id.spinner);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1,
+                cursoController.dadosParaSpinner());
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(adapter);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
