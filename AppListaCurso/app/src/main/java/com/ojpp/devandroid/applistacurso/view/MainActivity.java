@@ -2,7 +2,6 @@ package com.ojpp.devandroid.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 import com.ojpp.devandroid.applistacurso.R;
 import com.ojpp.devandroid.applistacurso.controller.CursoController;
 import com.ojpp.devandroid.applistacurso.controller.PessoaController;
-import com.ojpp.devandroid.applistacurso.model.Curso;
 import com.ojpp.devandroid.applistacurso.model.Pessoa;
 
 import java.util.List;
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnSalvar;
     Button btnFinaliar;
     Pessoa pessoa;
-    List<Curso> listaDeCursos;
+    List<String> nomeDosCursos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         pessoaController.toString();
 
         cursoController = new CursoController();
-        listaDeCursos = cursoController.getListaDeCursos();
+        nomeDosCursos = cursoController.dadosParaSpinner();
 
         Pessoa pessoa = pessoaController.buscar();
 
