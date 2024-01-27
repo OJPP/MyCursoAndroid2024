@@ -16,7 +16,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         comutarTelaSplash();
     }
 
@@ -25,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent telaPrincipal =
-                        new Intent(SplashActivity.this, MainActivity.class);
+                        new Intent(SplashActivity.this, GasEtaActivity.class);
                 startActivity(telaPrincipal);
                 finish();
             }
