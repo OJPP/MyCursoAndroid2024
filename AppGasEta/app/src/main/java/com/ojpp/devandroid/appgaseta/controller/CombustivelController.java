@@ -5,9 +5,7 @@ import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
 
 import com.ojpp.devandroid.appgaseta.model.Combustivel;
-import com.ojpp.devandroid.appgaseta.model.Pessoa;
 import com.ojpp.devandroid.appgaseta.view.GasEtaActivity;
-import com.ojpp.devandroid.appgaseta.view.MainActivity;
 
 public class CombustivelController {
 

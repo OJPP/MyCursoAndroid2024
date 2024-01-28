@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ojpp.devandroid.appgaseta.R;
 import com.ojpp.devandroid.appgaseta.controller.CombustivelController;
-import com.ojpp.devandroid.appgaseta.controller.PessoaController;
 import com.ojpp.devandroid.appgaseta.model.Combustivel;
 import com.ojpp.devandroid.appgaseta.utils.UtilsGasEta;
 
